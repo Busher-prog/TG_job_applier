@@ -1,0 +1,196 @@
+{
+  "common": {
+    "back": "← Zurück",
+    "skip": "Überspringen",
+    "cancel": "Abbrechen",
+    "continue": "Weiter",
+    "main_menu": "☰ Hauptmenü",
+    "yes": "Ja",
+    "no": "Nein",
+    "done": "Fertig",
+    "saved": "Gespeichert ✓",
+    "error_generic": "Bei mir ist etwas schiefgelaufen. Bitte versuche es gleich noch einmal.",
+    "coming_soon": "Dieser Bereich wird gerade vorbereitet und ist bald verfügbar.",
+    "rate_limited": "Etwas zu schnell — bitte warte ein paar Sekunden.",
+    "not_found": "Ich konnte diesen Eintrag nicht finden. Vielleicht wurde er gelöscht.",
+    "unknown_input": "Das habe ich nicht ganz verstanden. Nutze die Buttons unten oder öffne das Hauptmenü.",
+    "not_set": "nicht angegeben"
+  },
+  "welcome": {
+    "text": "👋 <b>Hallo! Ich bin AI Job Copilot, dein persönlicher KI-Assistent für die Jobsuche.</b>\n\nIch helfe dir, einen professionellen Lebenslauf zu erstellen, passende Stellen zu finden und individuelle Bewerbungen vorzubereiten.\n\n🎁 Deine ersten 5 Bewerbungen sind kostenlos.",
+    "btn_start": "🚀 Los geht's",
+    "btn_how": "ℹ️ So funktioniert's",
+    "btn_language": "🌐 Sprache wählen",
+    "resume_onboarding": "Willkommen zurück! Machen wir dort weiter, wo du aufgehört hast.",
+    "btn_resume_onboarding": "▶️ Einrichtung fortsetzen"
+  },
+  "how": {
+    "text": "<b>So funktioniert AI Job Copilot</b>\n\n1. Lade deinen Lebenslauf hoch oder erstelle ihn mit KI.\n2. Ich verbessere ihn und schlage passende Berufe vor.\n3. Du legst deine Suchkriterien fest — Ort, Arbeitsmodell, Gehalt.\n4. Ich finde aktuelle Stellen aus offiziellen Quellen und prüfe, wie gut sie passen.\n5. Ich finde den offiziellen Bewerbungsweg und schreibe ein persönliches Anschreiben.\n6. Du prüfst alles — ohne deine Bestätigung wird nichts versendet.\n7. Ich verfolge deine Bewerbungen und Antworten.\n\nDu behältst jederzeit die Kontrolle über deine Daten."
+  },
+  "lang": {
+    "choose": "Wähle die Sprache der Oberfläche:",
+    "changed": "Sprache aktualisiert ✓"
+  },
+  "consent": {
+    "text": "🔒 <b>Deine Daten und Privatsphäre</b>\n\nUm dir zu helfen, muss ich deinen Lebenslauf und deine Profildaten verarbeiten (Name, Kontakt, Berufserfahrung, Fähigkeiten).\n\n• Deine Daten werden nur genutzt, um deinen Lebenslauf zu erstellen und Jobs für dich zu finden.\n• Ohne deine ausdrückliche Bestätigung wird nichts an Arbeitgeber gesendet.\n• Du kannst deine Daten jederzeit in den Einstellungen exportieren oder löschen.\n\nBitte lies die <a href=\"{privacy_url}\">Datenschutzerklärung</a> und die <a href=\"{terms_url}\">Nutzungsbedingungen</a>.",
+    "btn_agree": "✅ Ich stimme zu",
+    "btn_read": "📄 Kurzfassung lesen",
+    "btn_decline": "Ablehnen",
+    "summary": "<b>Datenschutz in Kürze</b>\n\n• <b>Was wir speichern:</b> deine Lebenslauf-Dateien, Profildaten, Sucheinstellungen, erstellte Anschreiben und Bewerbungsverlauf.\n• <b>Wozu:</b> um Lebensläufe zu erstellen, Stellen zuzuordnen und Bewerbungen auf deinen Wunsch zu versenden.\n• <b>KI-Verarbeitung:</b> Lebenslauftexte und Stellenbeschreibungen werden zur Analyse und Texterstellung an unseren KI-Anbieter übermittelt. Laut Vertrag werden sie nicht zum Training öffentlicher Modelle verwendet.\n• <b>E-Mail:</b> wir senden nur E-Mails, die du bestätigst. Der Gmail-Zugriff wird separat angefragt und kann jederzeit getrennt werden.\n• <b>Deine Rechte (DSGVO):</b> Auskunft, Berichtigung, Export, Löschung und Widerruf der Einwilligung — alles in den Einstellungen.\n• <b>Speicherdauer:</b> Daten werden gespeichert, solange dein Konto aktiv ist, und auf Wunsch gelöscht.",
+    "declined": "Verstanden. Ohne Einwilligung kann ich deinen Lebenslauf nicht verarbeiten, daher sind die Jobsuche-Funktionen nicht verfügbar.\n\nDu kannst es dir jederzeit anders überlegen.",
+    "btn_review_again": "Noch einmal ansehen",
+    "required": "Bitte akzeptiere zuerst die Datenschutzbedingungen, um diese Funktion zu nutzen.",
+    "accepted": "Danke! ✓"
+  },
+  "onboarding": {
+    "progress": "Schritt {current} von {total} · {name}",
+    "step_cv": "Dein Lebenslauf",
+    "step_profile": "Profilprüfung",
+    "step_targets": "Wunschberufe",
+    "step_preferences": "Präferenzen",
+    "step_salary": "Gehalt & Ausschlüsse",
+    "step_confirm": "Bestätigung"
+  },
+  "resume": {
+    "options_text": "Zum Start brauche ich deinen Lebenslauf.\n\nWenn du noch keinen hast oder dir bei der Qualität unsicher bist, helfe ich dir, einen professionellen Lebenslauf von Grund auf zu erstellen.",
+    "btn_upload": "📤 Lebenslauf hochladen",
+    "btn_create": "✨ Lebenslauf mit KI erstellen",
+    "btn_improve": "🛠 Bestehenden Lebenslauf verbessern",
+    "btn_examples": "👀 Beispiel für einen guten Lebenslauf"
+  },
+  "upload": {
+    "prompt": "📎 Sende deinen Lebenslauf als <b>PDF</b>- oder <b>DOCX</b>-Datei (bis {max_mb} MB).",
+    "prompt_improve": "📎 Sende den Lebenslauf, den du verbessern möchtest, als <b>PDF</b> oder <b>DOCX</b> (bis {max_mb} MB).",
+    "processing": "⏳ Ich analysiere deinen Lebenslauf… Das dauert meist bis zu einer Minute.",
+    "no_document": "Bitte sende den Lebenslauf als Datei (PDF oder DOCX), nicht als Foto oder Text.",
+    "fallback_note": "ℹ️ Die KI-Analyse ist gerade nicht verfügbar, daher habe ich die Daten direkt aus der Datei übernommen. Bitte prüfe sie sorgfältig.",
+    "errors": {
+      "unsupported_format": "Dieses Dateiformat wird nicht unterstützt. Bitte sende eine PDF- oder DOCX-Datei.",
+      "legacy_doc": "Das ist eine alte .doc-Datei. Bitte speichere sie als DOCX oder PDF und sende sie erneut.",
+      "too_large": "Die Datei ist zu groß. Die maximale Größe beträgt {max_mb} MB.",
+      "empty_file": "Die Datei ist leer. Bitte prüfe sie und versuche es erneut.",
+      "corrupted": "Ich konnte die Datei nicht öffnen — sie ist möglicherweise beschädigt. Bitte exportiere sie neu und sende sie erneut.",
+      "encrypted": "Die Datei ist passwortgeschützt. Bitte entferne das Passwort und sende sie erneut.",
+      "no_text": "Ich konnte in dieser Datei keinen Text lesen (sieht aus wie ein Scan). Bitte sende eine textbasierte PDF oder DOCX.",
+      "too_many_pages": "Das Dokument hat zu viele Seiten für einen Lebenslauf. Bitte sende einen Lebenslauf mit bis zu 30 Seiten.",
+      "download_failed": "Ich konnte die Datei nicht von Telegram herunterladen. Bitte sende sie erneut."
+    }
+  },
+  "profile": {
+    "analyzed_title": "✅ <b>Dein Lebenslauf wurde analysiert.</b>",
+    "field_name": "Name",
+    "field_main": "Hauptbereich",
+    "field_experience": "Erfahrung",
+    "field_languages": "Sprachen",
+    "field_software": "Software & Tools",
+    "field_skills": "Fähigkeiten",
+    "field_email": "E-Mail",
+    "field_phone": "Telefon",
+    "field_location": "Ort",
+    "field_linkedin": "LinkedIn",
+    "field_portfolio": "Portfolio",
+    "field_last_job": "Letzte Position",
+    "no_experience": "noch keine Berufserfahrung",
+    "less_than_year": "weniger als ein Jahr",
+    "more_than_years": "mehr als {years}",
+    "question": "Ist alles korrekt?",
+    "btn_ok": "✅ Alles korrekt",
+    "btn_edit": "✏️ Daten ändern",
+    "btn_other_cv": "📤 Anderen Lebenslauf hochladen",
+    "edit_choose": "Was möchtest du ändern?",
+    "edit_prompt": "Sende den neuen Wert für <b>{field}</b>.\nDu kannst auch eine Sprachnachricht senden.",
+    "edit_prompt_languages": "Sende deine Sprachen und Niveaus, eine pro Zeile. Beispiel:\n<code>English - C1\nDeutsch - A2</code>\nNiveaus: A1, A2, B1, B2, C1, C2, Native, Fluent.",
+    "edit_prompt_list": "Sende <b>{field}</b> durch Kommas getrennt.",
+    "edit_saved": "Gespeichert ✓",
+    "invalid_email": "Das sieht nicht nach einer gültigen E-Mail-Adresse aus. Bitte versuche es erneut.",
+    "invalid_phone": "Das sieht nicht nach einer gültigen Telefonnummer aus. Bitte mit Ländervorwahl angeben.",
+    "invalid_url": "Das sieht nicht nach einem gültigen Link aus. Bitte sende eine vollständige URL, z. B. https://…",
+    "invalid_value": "Bitte sende einen kürzeren, gültigen Wert.",
+    "confirmed": "Super, dein Profil ist gespeichert ✓",
+    "title": "👤 <b>Mein Profil</b>",
+    "empty": "Dein Profil ist noch leer. Lade einen Lebenslauf hoch oder erstelle einen mit KI.",
+    "next_steps_pending": "Als Nächstes helfe ich dir, deine Jobsuche einzurichten."
+  },
+  "units": {
+    "years": {"one": "{n} Jahr", "few": "{n} Jahre", "many": "{n} Jahre", "other": "{n} Jahre"}
+  },
+  "menu": {
+    "title": "☰ <b>Hauptmenü</b>\nWas möchtest du tun?",
+    "find_jobs": "🔎 Jobs finden",
+    "new_jobs": "🆕 Neue Stellen",
+    "my_cvs": "📄 Meine Lebensläufe",
+    "create_cv": "✨ Lebenslauf erstellen",
+    "improve_cv": "🛠 Lebenslauf verbessern",
+    "saved_jobs": "⭐ Gespeicherte Stellen",
+    "applications": "📬 Meine Bewerbungen",
+    "profile": "👤 Mein Profil",
+    "search_settings": "⚙️ Sucheinstellungen",
+    "subscription": "💳 Abo",
+    "support": "💬 Support",
+    "settings": "🔧 Einstellungen"
+  },
+  "commands": {
+    "start": "Start / Hauptmenü",
+    "jobs": "Jobs finden",
+    "newjobs": "Neue Stellen",
+    "cv": "Meine Lebensläufe",
+    "createcv": "Lebenslauf mit KI erstellen",
+    "optimizecv": "Lebenslauf verbessern",
+    "saved": "Gespeicherte Stellen",
+    "applications": "Meine Bewerbungen",
+    "profile": "Mein Profil",
+    "settings": "Einstellungen",
+    "subscription": "Abo",
+    "help": "Hilfe & Support"
+  },
+  "cv": {
+    "list_title": "📄 <b>Meine Lebensläufe</b>",
+    "empty": "Du hast noch keinen Lebenslauf.",
+    "item_primary": "⭐ Haupt-CV",
+    "kind_uploaded": "hochgeladen",
+    "kind_generated": "mit KI erstellt",
+    "kind_optimized": "verbessert",
+    "kind_tailored": "für Stelle angepasst",
+    "status_failed": "Verarbeitung fehlgeschlagen",
+    "btn_upload_new": "📤 Neuen Lebenslauf hochladen",
+    "btn_download": "⬇️ Herunterladen",
+    "btn_make_primary": "⭐ Als Haupt-CV",
+    "btn_delete": "🗑 Löschen",
+    "delete_confirm": "Diesen Lebenslauf endgültig löschen?",
+    "deleted": "Lebenslauf gelöscht ✓",
+    "primary_set": "Das ist jetzt dein Haupt-Lebenslauf ✓"
+  },
+  "settings": {
+    "title": "🔧 <b>Einstellungen</b>\n\nSprache der Oberfläche: {ui}\nSprache des Lebenslaufs: {cv}\nSprache der Anschreiben: {letter}",
+    "btn_ui_lang": "🌐 Oberflächensprache",
+    "btn_cv_lang": "📄 Lebenslauf-Sprache",
+    "btn_letter_lang": "✉️ Anschreiben-Sprache",
+    "btn_privacy": "🔒 Datenschutz & Daten",
+    "choose_cv_lang": "In welcher Sprache soll dein Lebenslauf erstellt werden?",
+    "choose_letter_lang": "In welcher Sprache sollen Anschreiben verfasst werden?",
+    "letter_lang_auto": "Wie die Stellenanzeige",
+    "privacy_title": "🔒 <b>Datenschutz & Daten</b>\n\nDu kannst jederzeit alle deine Daten herunterladen oder dein Konto löschen.",
+    "btn_export": "📦 Meine Daten exportieren",
+    "btn_delete_account": "🗑 Konto löschen",
+    "btn_policy": "📄 Datenschutzerklärung",
+    "export_caption": "Hier sind alle über dich gespeicherten Daten.",
+    "delete_confirm": "⚠️ Dein Profil, deine Lebensläufe, Bewerbungen und die E-Mail-Verbindung werden endgültig gelöscht. Das kann nicht rückgängig gemacht werden.\n\nAlles löschen?",
+    "btn_delete_yes": "Ja, alles löschen",
+    "account_deleted": "Dein Konto und alle Daten wurden gelöscht. Sende /start, wenn du neu beginnen möchtest."
+  },
+  "languages": {
+    "en": "English",
+    "de": "Deutsch",
+    "uk": "Українська",
+    "ru": "Русский",
+    "other": "Andere Sprache"
+  },
+  "help": {
+    "text": "💬 <b>Hilfe & Support</b>\n\n/start — Hauptmenü\n/jobs — Jobs finden\n/cv — meine Lebensläufe\n/createcv — Lebenslauf mit KI erstellen\n/optimizecv — Lebenslauf verbessern\n/profile — mein Profil\n/settings — Sprache, Datenschutz und Daten\n\nFragen oder Probleme? Schreib an {support}."
+  },
+  "voice": {
+    "transcribing": "🎙 Ich höre zu…",
+    "failed": "Ich konnte die Sprachnachricht nicht erkennen. Bitte versuche es erneut oder schreibe deine Antwort.",
+    "too_long": "Die Sprachnachricht ist zu lang. Bitte halte sie unter 3 Minuten."
+  }
+}

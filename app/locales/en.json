@@ -1,0 +1,196 @@
+{
+  "common": {
+    "back": "← Back",
+    "skip": "Skip",
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "main_menu": "☰ Main menu",
+    "yes": "Yes",
+    "no": "No",
+    "done": "Done",
+    "saved": "Saved ✓",
+    "error_generic": "Something went wrong on my side. Please try again in a moment.",
+    "coming_soon": "This section is being prepared and will be available soon.",
+    "rate_limited": "You're going a bit fast — please wait a few seconds.",
+    "not_found": "I couldn't find that item. It may have been deleted.",
+    "unknown_input": "I didn't quite get that. Use the buttons below or open the main menu.",
+    "not_set": "not set"
+  },
+  "welcome": {
+    "text": "👋 <b>Hi! I'm AI Job Copilot, your personal AI job-search assistant.</b>\n\nI'll help you build a professional CV, find matching vacancies and prepare personalised applications to employers.\n\n🎁 Your first 5 applications are free.",
+    "btn_start": "🚀 Start",
+    "btn_how": "ℹ️ How it works",
+    "btn_language": "🌐 Choose language",
+    "resume_onboarding": "Welcome back! Let's continue where you left off.",
+    "btn_resume_onboarding": "▶️ Continue setup"
+  },
+  "how": {
+    "text": "<b>How AI Job Copilot works</b>\n\n1. Upload your CV or create one with AI.\n2. I improve it and suggest matching professions.\n3. You set your search criteria — location, format, salary.\n4. I find current vacancies from official sources and check how well they match.\n5. I find the official way to apply and write a personalised cover letter.\n6. You review everything — nothing is sent without your confirmation.\n7. I track your applications and responses.\n\nYou stay in control of your data at all times."
+  },
+  "lang": {
+    "choose": "Choose the interface language:",
+    "changed": "Language updated ✓"
+  },
+  "consent": {
+    "text": "🔒 <b>Your data and privacy</b>\n\nTo help you, I need to process your CV and profile data (name, contacts, work history, skills).\n\n• Your data is used only to build your CV and find jobs for you.\n• Nothing is sent to employers without your explicit confirmation.\n• You can export or delete your data at any time in Settings.\n\nPlease read the <a href=\"{privacy_url}\">Privacy Policy</a> and <a href=\"{terms_url}\">Terms of Service</a>.",
+    "btn_agree": "✅ I agree",
+    "btn_read": "📄 Read summary",
+    "btn_decline": "Decline",
+    "summary": "<b>Privacy summary</b>\n\n• <b>What we store:</b> your CV files, profile data, search settings, generated letters and application history.\n• <b>Why:</b> to provide CV building, job matching and application features you request.\n• <b>AI processing:</b> CV text and job descriptions are sent to our AI provider to analyse and generate texts. They are not used to train public models under our provider agreements.\n• <b>Email:</b> we only send emails you confirm. Gmail access is requested separately and can be disconnected at any time.\n• <b>Your rights (GDPR):</b> access, correction, export, deletion and withdrawal of consent — all available in Settings.\n• <b>Retention:</b> data is kept while your account is active and deleted on request.",
+    "declined": "Understood. Without consent I can't process your CV, so job-search features are unavailable.\n\nYou can change your mind at any time.",
+    "btn_review_again": "Review again",
+    "required": "Please accept the privacy terms first to use this feature.",
+    "accepted": "Thank you! ✓"
+  },
+  "onboarding": {
+    "progress": "Step {current} of {total} · {name}",
+    "step_cv": "Your CV",
+    "step_profile": "Profile check",
+    "step_targets": "Target jobs",
+    "step_preferences": "Preferences",
+    "step_salary": "Salary & exclusions",
+    "step_confirm": "Confirmation"
+  },
+  "resume": {
+    "options_text": "To get started, I'll need your CV.\n\nIf you don't have a CV yet or aren't sure about its quality, I'll help you create a professional one from scratch.",
+    "btn_upload": "📤 Upload my CV",
+    "btn_create": "✨ Create a CV with AI",
+    "btn_improve": "🛠 Improve my existing CV",
+    "btn_examples": "👀 See a good CV example"
+  },
+  "upload": {
+    "prompt": "📎 Send your CV as a <b>PDF</b> or <b>DOCX</b> file (up to {max_mb} MB).",
+    "prompt_improve": "📎 Send the CV you'd like to improve as a <b>PDF</b> or <b>DOCX</b> file (up to {max_mb} MB).",
+    "processing": "⏳ Analysing your CV… This usually takes up to a minute.",
+    "no_document": "Please send the CV as a file (PDF or DOCX), not as a photo or text.",
+    "fallback_note": "ℹ️ The AI analysis is temporarily unavailable, so I extracted the data directly from the file. Please check it carefully.",
+    "errors": {
+      "unsupported_format": "This file format isn't supported. Please send a PDF or DOCX file.",
+      "legacy_doc": "This is an old .doc file. Please save it as DOCX or PDF and send it again.",
+      "too_large": "The file is too large. The maximum size is {max_mb} MB.",
+      "empty_file": "The file is empty. Please check it and try again.",
+      "corrupted": "I couldn't open this file — it may be damaged. Please export it again and resend.",
+      "encrypted": "The file is password-protected. Please remove the password and send it again.",
+      "no_text": "I couldn't read any text in this file (it looks like a scanned image). Please send a text-based PDF or DOCX.",
+      "too_many_pages": "The document has too many pages for a CV. Please send a CV of up to 30 pages.",
+      "download_failed": "I couldn't download the file from Telegram. Please try sending it again."
+    }
+  },
+  "profile": {
+    "analyzed_title": "✅ <b>Your CV has been analysed.</b>",
+    "field_name": "Name",
+    "field_main": "Main experience",
+    "field_experience": "Experience",
+    "field_languages": "Languages",
+    "field_software": "Software & tools",
+    "field_skills": "Skills",
+    "field_email": "Email",
+    "field_phone": "Phone",
+    "field_location": "Location",
+    "field_linkedin": "LinkedIn",
+    "field_portfolio": "Portfolio",
+    "field_last_job": "Latest position",
+    "no_experience": "no work experience yet",
+    "less_than_year": "less than a year",
+    "more_than_years": "more than {years}",
+    "question": "Is everything correct?",
+    "btn_ok": "✅ All correct",
+    "btn_edit": "✏️ Edit data",
+    "btn_other_cv": "📤 Upload another CV",
+    "edit_choose": "What would you like to change?",
+    "edit_prompt": "Send the new value for <b>{field}</b>.\nYou can also send a voice message.",
+    "edit_prompt_languages": "Send your languages and levels, one per line. Example:\n<code>English - C1\nGerman - A2</code>\nLevels: A1, A2, B1, B2, C1, C2, Native, Fluent.",
+    "edit_prompt_list": "Send <b>{field}</b> separated by commas.",
+    "edit_saved": "Saved ✓",
+    "invalid_email": "That doesn't look like a valid email address. Please try again.",
+    "invalid_phone": "That doesn't look like a valid phone number. Please include the country code.",
+    "invalid_url": "That doesn't look like a valid link. Please send a full URL, e.g. https://…",
+    "invalid_value": "Please send a shorter, valid value.",
+    "confirmed": "Great, your profile is saved ✓",
+    "title": "👤 <b>My profile</b>",
+    "empty": "Your profile is empty. Upload a CV or create one with AI to fill it in.",
+    "next_steps_pending": "Next I'll help you set up your job search."
+  },
+  "units": {
+    "years": {"one": "{n} year", "few": "{n} years", "many": "{n} years", "other": "{n} years"}
+  },
+  "menu": {
+    "title": "☰ <b>Main menu</b>\nWhat would you like to do?",
+    "find_jobs": "🔎 Find jobs",
+    "new_jobs": "🆕 New vacancies",
+    "my_cvs": "📄 My CVs",
+    "create_cv": "✨ Create CV",
+    "improve_cv": "🛠 Improve CV",
+    "saved_jobs": "⭐ Saved jobs",
+    "applications": "📬 My applications",
+    "profile": "👤 My profile",
+    "search_settings": "⚙️ Search settings",
+    "subscription": "💳 Subscription",
+    "support": "💬 Support",
+    "settings": "🔧 Settings"
+  },
+  "commands": {
+    "start": "Start / main menu",
+    "jobs": "Find jobs",
+    "newjobs": "New vacancies",
+    "cv": "My CVs",
+    "createcv": "Create a CV with AI",
+    "optimizecv": "Improve a CV",
+    "saved": "Saved jobs",
+    "applications": "My applications",
+    "profile": "My profile",
+    "settings": "Settings",
+    "subscription": "Subscription",
+    "help": "Help & support"
+  },
+  "cv": {
+    "list_title": "📄 <b>My CVs</b>",
+    "empty": "You don't have any CVs yet.",
+    "item_primary": "⭐ main",
+    "kind_uploaded": "uploaded",
+    "kind_generated": "created with AI",
+    "kind_optimized": "improved",
+    "kind_tailored": "tailored",
+    "status_failed": "processing failed",
+    "btn_upload_new": "📤 Upload new CV",
+    "btn_download": "⬇️ Download",
+    "btn_make_primary": "⭐ Make main",
+    "btn_delete": "🗑 Delete",
+    "delete_confirm": "Delete this CV permanently?",
+    "deleted": "CV deleted ✓",
+    "primary_set": "This CV is now your main CV ✓"
+  },
+  "settings": {
+    "title": "🔧 <b>Settings</b>\n\nInterface language: {ui}\nCV language: {cv}\nCover letter language: {letter}",
+    "btn_ui_lang": "🌐 Interface language",
+    "btn_cv_lang": "📄 CV language",
+    "btn_letter_lang": "✉️ Letter language",
+    "btn_privacy": "🔒 Privacy & data",
+    "choose_cv_lang": "In which language should your CV be created?",
+    "choose_letter_lang": "In which language should cover letters be written?",
+    "letter_lang_auto": "Match the vacancy",
+    "privacy_title": "🔒 <b>Privacy & data</b>\n\nYou can download all your data or delete your account at any time.",
+    "btn_export": "📦 Export my data",
+    "btn_delete_account": "🗑 Delete account",
+    "btn_policy": "📄 Privacy Policy",
+    "export_caption": "Here is all the data stored about you.",
+    "delete_confirm": "⚠️ This will permanently delete your profile, CVs, applications and email connection. This cannot be undone.\n\nDelete everything?",
+    "btn_delete_yes": "Yes, delete everything",
+    "account_deleted": "Your account and all data have been deleted. Send /start if you want to begin again."
+  },
+  "languages": {
+    "en": "English",
+    "de": "Deutsch",
+    "uk": "Українська",
+    "ru": "Русский",
+    "other": "Other language"
+  },
+  "help": {
+    "text": "💬 <b>Help & support</b>\n\n/start — main menu\n/jobs — find jobs\n/cv — my CVs\n/createcv — create a CV with AI\n/optimizecv — improve a CV\n/profile — my profile\n/settings — language, privacy and data\n\nQuestions or problems? Contact {support}."
+  },
+  "voice": {
+    "transcribing": "🎙 Listening…",
+    "failed": "Sorry, I couldn't recognise the voice message. Please try again or type your answer.",
+    "too_long": "The voice message is too long. Please keep it under 3 minutes."
+  }
+}

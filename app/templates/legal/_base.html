@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="{% block lang %}en{% endblock %}">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{% endblock %} — AI Job Copilot</title>
+<style>
+body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:760px;margin:0 auto;padding:24px 16px;line-height:1.6;color:#1d2433;background:#fff}
+h1{font-size:1.6rem}h2{font-size:1.15rem;margin-top:1.6em}small{color:#667}
+@media (prefers-color-scheme:dark){body{background:#12151c;color:#e4e7ee}small{color:#9aa}}
+</style>
+</head>
+<body>{% block body %}{% endblock %}<hr><small>Version {{ version }} · Contact: {{ support }}</small></body>
+</html>
