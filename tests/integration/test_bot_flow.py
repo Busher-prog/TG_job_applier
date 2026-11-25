@@ -6,20 +6,12 @@ import re
 import pytest
 from sqlalchemy import func, select
 
-from app.bot.factory import create_dispatcher
 from app.bot.keyboards.callbacks import ProfileCb
 from app.database.models import ConsentRecord, Resume, User
 from app.database.models.enums import OnboardingStep
 from tests.bot_harness import BotHarness
 
 pytestmark = pytest.mark.integration
-
-
-@pytest.fixture(scope="session")
-def dispatcher(engine):  # type: ignore[no-untyped-def]
-    from sqlalchemy.ext.asyncio import async_sessionmaker
-
-    return create_dispatcher(async_sessionmaker(engine, expire_on_commit=False))
 
 
 @pytest.fixture

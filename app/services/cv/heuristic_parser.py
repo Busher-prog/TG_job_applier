@@ -15,9 +15,13 @@ from app.schemas.common import normalize_email, normalize_phone, normalize_url
 EMAIL_RE = re.compile(r"[A-Za-z0-9._%+'-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 PHONE_RE = re.compile(r"(?<![\w/])(\+?\d[\d ()./-]{7,}\d)(?![\w/])")
 URL_RE = re.compile(r"(https?://[^\s<>\"')]+|www\.[^\s<>\"')]+|linkedin\.com/[^\s<>\"')]+)", re.I)
-DATE_TOKEN = r"(?:\d{1,2}[./])?\d{4}|[A-Za-zÄäÖöÜü]{3,9}\.?\s+\d{4}"
+MONTH_NAMES = (
+    r"jan(?:uary|uar)?|feb(?:ruary|ruar)?|m(?:ar|är)(?:ch|z)?|apr(?:il)?|ma[iy]|june?|juni|july?|juli|"
+    r"aug(?:ust)?|sep(?:t|tember)?|o[ck]t(?:ober)?|nov(?:ember)?|de[cz](?:ember)?|jän(?:ner)?"
+)
+DATE_TOKEN = rf"(?:\d{{1,2}}[./])?\d{{4}}|(?:{MONTH_NAMES})\.?\s+\d{{4}}"
 PRESENT_TOKEN = r"present|current|now|today|heute|aktuell|jetzt|настоящее время|н\.в\.|сейчас|теперішній час|дотепер|зараз"
-RANGE_RE = re.compile(rf"({DATE_TOKEN})\s*(?:-|–|—|bis|по|до|to)\s*({DATE_TOKEN}|{PRESENT_TOKEN})", re.I)
+RANGE_RE = re.compile(rf"\b({DATE_TOKEN})\s*(?:-|–|—|bis|по|до|to)\s*({DATE_TOKEN}|{PRESENT_TOKEN})", re.I)
 
 SECTION_ALIASES: dict[str, tuple[str, ...]] = {
     "summary": ("summary", "profile", "about me", "professional summary", "profil", "über mich",
@@ -54,6 +58,10 @@ LEVEL_RE = re.compile(
     r"родной|рідна|свободно|вільно|свободный|вільний",
     re.I,
 )
+
+
+def is_present_token(value: str | None) -> bool:
+    return bool(value) and re.fullmatch(PRESENT_TOKEN, value.strip(), re.I) is not None
 
 
 def _heading_key(line: str) -> str | None:

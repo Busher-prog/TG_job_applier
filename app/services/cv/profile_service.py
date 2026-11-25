@@ -97,18 +97,21 @@ async def apply_parsed_cv(
             )
         )
 
-    kept = [s for s in profile.skills if s.source == "user"]
-    existing = {(s.category, s.name_normalized) for s in kept}
-    profile.skills[:] = kept
+    # Reuse existing rows: the unit of work inserts before it deletes, so replacing
+    # a row with an identical (category, name) would violate the unique constraint.
+    wanted: dict[tuple[str, str], str] = {}
     for attr, category in _SKILL_FIELDS.items():
         for name in getattr(parsed.skills, attr):
-            key = (category.value, normalize_skill(name))
-            if key in existing:
-                continue
-            existing.add(key)
-            profile.skills.append(
-                CandidateSkill(name=name[:120], name_normalized=key[1], category=category.value, source="cv")
-            )
+            wanted.setdefault((category.value, normalize_skill(name)), name[:120])
+    keep = []
+    for skill in profile.skills:
+        key = (skill.category, skill.name_normalized)
+        if skill.source == "user" or key in wanted:
+            keep.append(skill)
+            wanted.pop(key, None)
+    profile.skills[:] = keep
+    for (category, key), name in wanted.items():
+        profile.skills.append(CandidateSkill(name=name, name_normalized=key, category=category, source="cv"))
 
     by_lang = {lang.language.lower(): lang for lang in profile.languages}
     for item in parsed.languages:

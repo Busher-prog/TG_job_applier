@@ -112,7 +112,12 @@
     "next_steps_pending": "Next I'll help you set up your job search."
   },
   "units": {
-    "years": {"one": "{n} year", "few": "{n} years", "many": "{n} years", "other": "{n} years"}
+    "years": {
+      "one": "{n} year",
+      "few": "{n} years",
+      "many": "{n} years",
+      "other": "{n} years"
+    }
   },
   "menu": {
     "title": "☰ <b>Main menu</b>\nWhat would you like to do?",
@@ -158,7 +163,8 @@
     "btn_delete": "🗑 Delete",
     "delete_confirm": "Delete this CV permanently?",
     "deleted": "CV deleted ✓",
-    "primary_set": "This CV is now your main CV ✓"
+    "primary_set": "This CV is now your main CV ✓",
+    "btn_open_editor": "👁 Open & edit"
   },
   "settings": {
     "title": "🔧 <b>Settings</b>\n\nInterface language: {ui}\nCV language: {cv}\nCover letter language: {letter}",
@@ -192,5 +198,174 @@
     "transcribing": "🎙 Listening…",
     "failed": "Sorry, I couldn't recognise the voice message. Please try again or type your answer.",
     "too_long": "The voice message is too long. Please keep it under 3 minutes."
+  },
+  "builder": {
+    "intro": "✨ <b>Let's create a professional CV.</b>\n\nI'll ask a few questions and then prepare the text, structure and design myself. You can answer in your own words or with a voice message, and skip optional questions.",
+    "resume_or_restart": "You have an unfinished CV. Continue where you left off?",
+    "btn_resume": "▶️ Continue",
+    "btn_restart": "🔄 Start over",
+    "header": "<i>CV builder · {section}</i>\n\n",
+    "section_personal": "Personal information",
+    "section_direction": "Direction",
+    "section_experience": "Work experience",
+    "section_details": "Details",
+    "section_education": "Education",
+    "section_skills": "Skills",
+    "section_languages": "Languages",
+    "section_extras": "Certificates & projects",
+    "section_final": "Language & design",
+    "ask_name": "What's your name? Write your first and last name exactly as they should appear on the CV.",
+    "ask_email": "Your email address for employers?",
+    "ask_phone": "Your phone number (with country code)?",
+    "ask_location": "Which city and country do you live in? Example: <code>Vienna, Austria</code>",
+    "ask_linkedin": "Do you have a LinkedIn profile? Send the link or skip.",
+    "ask_portfolio": "Do you have a portfolio or personal website? Send the link or skip.",
+    "ask_direction": "What kind of job would you like to find? If you're not sure yet, I'll help you choose a direction based on your experience.",
+    "btn_dir_known": "🎯 I know the profession",
+    "btn_dir_help": "🧭 Help me choose",
+    "btn_dir_exploring": "🔀 Considering different fields",
+    "ask_target_role": "Which position are you looking for? Example: <code>Video Editor</code>",
+    "ask_experience": "Tell me about your latest or current job: position, company, dates and what you did. You can write normally or record a voice message.",
+    "ask_experience_more": "Tell me about the next job (the one before): position, company, dates and what you did.",
+    "btn_no_experience": "🌱 I have no work experience",
+    "exp_list": "Your work experience so far:\n{items}",
+    "btn_add_job": "➕ Add another job",
+    "nothing_found": "I couldn't find the details I need in this answer. Could you rephrase it?",
+    "followup_job_title": "What was your job title there?",
+    "followup_company": "What's the name of the company?",
+    "followup_dates": "When did you work there? Example: <code>03/2021 – present</code> or <code>2019 – 2022</code>",
+    "followup_responsibilities": "What were your main tasks and results there?",
+    "adaptive_intro": "A few questions about your profession to make the CV stronger:",
+    "question_counter": "Question {n} of {total}",
+    "ask_education": "Tell me about your education: institution, degree, specialisation and years. Example: <code>University of Vienna, BA Economics, 2016 – 2019</code>",
+    "edu_list": "Your education:\n{items}",
+    "btn_add_education": "➕ Add education",
+    "ask_skills": "Which professional skills and programs do you know?\n\nTap the ones that apply — and write any others in a message, separated by commas.",
+    "ask_skills_none": "Which professional skills and programs do you know? Write them separated by commas.",
+    "btn_skills_done": "✅ Done",
+    "skills_added": "Added: {items}",
+    "ask_languages": "Which languages do you speak and at what level? One per line, for example:\n<code>English - B2\nGerman - A2\nUkrainian - Native</code>\nLevels: A1–C2, Native, Fluent. If you don't know the level, just write the language.",
+    "ask_extras": "Do you have certificates, courses, licences, personal projects or professional links? Write them one per line, or skip.",
+    "ask_cv_language": "In which language should I create your CV?",
+    "ask_cv_language_other": "Write the language for your CV, e.g. <code>Polish</code>.",
+    "ask_design": "I've picked several designs for your profession. ⭐ — my recommendation.",
+    "btn_choose_for_me": "🤖 Choose for me",
+    "generating": "⏳ Creating your CV: structure, text and design… This can take up to a minute.",
+    "generation_failed": "I couldn't create the CV right now. Your answers are saved — please try again in a moment.",
+    "need_contact": "A CV needs at least an email or a phone number. Please send one of them.",
+    "need_name": "Please send your first and last name.",
+    "bank": {
+      "video": {
+        "1": "Which programs do you edit in?",
+        "2": "What kinds of videos have you created?",
+        "3": "For which platforms (YouTube, TikTok, Instagram, TV…)?",
+        "4": "Do you have a portfolio or showreel? Send the link."
+      },
+      "sales": {
+        "1": "Which clients did you work with?",
+        "2": "Was it B2B or B2C sales?",
+        "3": "Which CRM systems did you use?",
+        "4": "Do you have measurable results (revenue, plan fulfilment, number of deals)?"
+      },
+      "logistics": {
+        "1": "Which modes of transport did you work with?",
+        "2": "Which countries did you work with?",
+        "3": "Did you work with carriers and transport documents (CMR, customs)?",
+        "4": "Which TMS or ERP systems did you use?"
+      },
+      "no_experience": {
+        "1": "Do you have study projects you're proud of?",
+        "2": "Do you have personal projects?",
+        "3": "Have you completed any courses?",
+        "4": "Do you have volunteer experience?"
+      },
+      "generic": {
+        "1": "Which tools or programs do you use at work?",
+        "2": "What results are you most proud of? Numbers are welcome if you know them.",
+        "3": "Is there anything else an employer should know (licences, portfolio)?"
+      }
+    }
+  },
+  "preview": {
+    "ready": "🎉 <b>Your CV is ready!</b> I chose a structure that highlights your most relevant experience and skills.\n\nYou can also write what to change, for example: <i>“Move education lower”</i>, <i>“Emphasise video editing”</i>, <i>“Make it one page”</i>.",
+    "updated": "✅ Updated — version {n}.",
+    "btn_confirm": "✅ Confirm CV",
+    "btn_edit_info": "✏️ Edit information",
+    "btn_structure": "🧱 Change structure",
+    "btn_design": "🎨 Change design",
+    "btn_language": "🌐 Change language",
+    "btn_shorter": "✂️ Make it shorter",
+    "btn_pdf": "⬇️ PDF",
+    "btn_docx": "⬇️ DOCX",
+    "btn_versions": "🕘 Versions",
+    "edit_hint": "Write what to change in your own words, for example:\n• <i>Add my portfolio https://…</i>\n• <i>Shorten the description of the restaurant job</i>\n• <i>Change email to name@example.com</i>\n• <i>Make the summary more formal</i>\n\nI won't add facts that aren't in your profile.",
+    "structure_title": "Use the arrows to reorder sections, then tap “Done”.",
+    "design_title": "Choose a design:",
+    "language_title": "Choose the CV language:",
+    "updating": "⏳ Updating your CV…",
+    "confirmed": "✅ CV confirmed and set as your main CV.",
+    "versions_title": "🕘 <b>Versions</b>\nTap a version to restore it as the current one.",
+    "restored": "Restored ✓",
+    "needs_new_facts": "I can only use facts you've told me. To add new experience, education or results, update your profile (/profile) or tell me the details — then I'll regenerate the CV.",
+    "nothing_changed": "I couldn't understand what to change. Try rephrasing, or use the buttons.",
+    "page_limit_failed": "ℹ️ Even in the most compact layout the CV takes {pages} pages. Try “Make it shorter” or remove a section.",
+    "render_failed": "Something went wrong while creating the document. Your previous version is kept.",
+    "invalid_value": "Some values were invalid and were not applied."
+  },
+  "optimizer": {
+    "analyzing": "🔍 Analysing your CV…",
+    "title": "📋 <b>I analysed your CV and found some ways to improve it.</b>",
+    "score": "ATS readability (indicative): <b>{score}/100</b>",
+    "disclaimer": "<i>The score is an estimate based on structure checks. No tool can guarantee passing an employer's system.</i>",
+    "strengths": "<b>Strengths</b>",
+    "issues": "<b>Problems</b>",
+    "recommendations": "<b>Recommended changes</b>",
+    "missing": "<b>Missing information</b>",
+    "btn_auto": "✨ Improve automatically",
+    "btn_questions": "💬 Answer clarifying questions",
+    "btn_recommendations": "📝 View recommendations",
+    "btn_keep": "📄 Keep the original",
+    "no_recommendations": "No additional recommendations.",
+    "kept": "OK, I'll keep your original CV.",
+    "s": {
+      "contacts_complete": "Contact details are complete",
+      "has_summary": "Has a professional summary",
+      "clear_dates": "Work periods have clear dates",
+      "quantified_results": "Results are backed by numbers",
+      "skills_listed": "Skills are listed",
+      "languages_listed": "Languages are listed"
+    },
+    "i": {
+      "no_email": "No email address — add one so employers can reply.",
+      "no_phone": "No phone number.",
+      "no_summary": "No professional summary at the top.",
+      "missing_dates": "Some positions have no dates.",
+      "few_bullets": "Job descriptions are too short to show what you did.",
+      "no_quantified": "No measurable results (numbers, volumes, %).",
+      "too_long": "The CV is longer than recruiters usually read.",
+      "too_short": "The CV is very short — important details may be missing.",
+      "no_skills": "No skills section.",
+      "no_languages": "Language skills are not listed.",
+      "scanned": "The file is a scanned image — many ATS systems cannot read it.",
+      "many_pages": "Too many pages.",
+      "long_paragraphs": "Long paragraphs are hard to scan — use bullet points.",
+      "no_experience_section": "No experience or education section was found."
+    },
+    "fallback_q": {
+      "missing_dates": "For which positions can you tell me the dates (month/year)?",
+      "no_quantified": "Do you have measurable results, e.g. volumes, numbers of clients or growth?",
+      "no_skills": "Which tools, programs and professional skills do you use?",
+      "no_summary": "Which position are you applying for?",
+      "few_bullets": "What were your main tasks in your latest job?"
+    }
+  },
+  "examples": {
+    "intro": "👀 Here are three examples of well-structured CVs (all data is fictional).",
+    "classic_ats": "<b>Classic ATS</b>\nSingle column, standard headings, no decorative elements — read reliably by applicant tracking systems.\n<i>Recommended for:</i> logistics, finance, engineering, administration, healthcare.",
+    "modern": "<b>Modern Professional</b>\nClean single column with a coloured header and accent headings.\n<i>Recommended for:</i> sales, marketing, project management, consulting, IT.",
+    "creative": "<b>Creative</b>\nBold header and a sidebar for contacts and skills.\n<i>Recommended for:</i> video editing, design, content creation, photography.",
+    "outro": "Would you like a CV like this?",
+    "btn_similar": "✨ Create similar: {name}",
+    "unavailable": "Examples are not available right now."
   }
 }

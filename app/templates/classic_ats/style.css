@@ -1,0 +1,25 @@
+@page { size: A4; margin: 16mm 17mm 16mm 17mm; }
+html { font-family: "Liberation Sans", "DejaVu Sans", Arial, sans-serif; font-size: 10.3pt; color: #111; line-height: 1.38; }
+body { margin: 0; }
+h1 { font-size: 20pt; margin: 0 0 1mm 0; letter-spacing: .3pt; }
+.headline { font-size: 11.5pt; margin-bottom: 1.5mm; }
+.contact { font-size: 9.6pt; }
+.contact a, a { color: #111; text-decoration: none; }
+.sep { color: #777; }
+h2 { font-size: 11pt; text-transform: uppercase; letter-spacing: .6pt; border-bottom: 0.8pt solid #222;
+     margin: 5mm 0 2mm 0; padding-bottom: .6mm; page-break-after: avoid; }
+.entry { margin-bottom: 2.6mm; page-break-inside: avoid; }
+.entry-head { display: flex; justify-content: space-between; gap: 4mm; }
+.entry-title { flex: 1; }
+.entry-meta { white-space: nowrap; color: #333; font-size: 9.6pt; }
+ul { margin: 1mm 0 0 0; padding-left: 4.5mm; }
+li { margin-bottom: .6mm; }
+p { margin: 0 0 1mm 0; }
+.tools { font-size: 9.2pt; color: #333; margin-top: .6mm; }
+.label { font-weight: bold; }
+body.density-1 { font-size: 9.8pt; line-height: 1.3; }
+body.density-2 { font-size: 9.3pt; line-height: 1.25; }
+body.density-2 h2 { margin-top: 3.5mm; }
+body.density-3 { font-size: 8.8pt; line-height: 1.2; }
+body.density-3 h2 { margin-top: 3mm; }
+body.density-3 .entry { margin-bottom: 1.6mm; }

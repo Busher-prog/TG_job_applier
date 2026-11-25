@@ -112,7 +112,12 @@
     "next_steps_pending": "Als Nächstes helfe ich dir, deine Jobsuche einzurichten."
   },
   "units": {
-    "years": {"one": "{n} Jahr", "few": "{n} Jahre", "many": "{n} Jahre", "other": "{n} Jahre"}
+    "years": {
+      "one": "{n} Jahr",
+      "few": "{n} Jahre",
+      "many": "{n} Jahre",
+      "other": "{n} Jahre"
+    }
   },
   "menu": {
     "title": "☰ <b>Hauptmenü</b>\nWas möchtest du tun?",
@@ -158,7 +163,8 @@
     "btn_delete": "🗑 Löschen",
     "delete_confirm": "Diesen Lebenslauf endgültig löschen?",
     "deleted": "Lebenslauf gelöscht ✓",
-    "primary_set": "Das ist jetzt dein Haupt-Lebenslauf ✓"
+    "primary_set": "Das ist jetzt dein Haupt-Lebenslauf ✓",
+    "btn_open_editor": "👁 Öffnen & bearbeiten"
   },
   "settings": {
     "title": "🔧 <b>Einstellungen</b>\n\nSprache der Oberfläche: {ui}\nSprache des Lebenslaufs: {cv}\nSprache der Anschreiben: {letter}",
@@ -192,5 +198,174 @@
     "transcribing": "🎙 Ich höre zu…",
     "failed": "Ich konnte die Sprachnachricht nicht erkennen. Bitte versuche es erneut oder schreibe deine Antwort.",
     "too_long": "Die Sprachnachricht ist zu lang. Bitte halte sie unter 3 Minuten."
+  },
+  "builder": {
+    "intro": "✨ <b>Lass uns einen professionellen Lebenslauf erstellen.</b>\n\nIch stelle dir ein paar Fragen und bereite dann Text, Struktur und Design selbst vor. Du kannst frei antworten oder eine Sprachnachricht senden und optionale Fragen überspringen.",
+    "resume_or_restart": "Du hast einen unfertigen Lebenslauf. Dort weitermachen, wo du aufgehört hast?",
+    "btn_resume": "▶️ Weitermachen",
+    "btn_restart": "🔄 Neu beginnen",
+    "header": "<i>Lebenslauf-Assistent · {section}</i>\n\n",
+    "section_personal": "Persönliche Daten",
+    "section_direction": "Richtung",
+    "section_experience": "Berufserfahrung",
+    "section_details": "Details",
+    "section_education": "Ausbildung",
+    "section_skills": "Kenntnisse",
+    "section_languages": "Sprachen",
+    "section_extras": "Zertifikate & Projekte",
+    "section_final": "Sprache & Design",
+    "ask_name": "Wie heißt du? Schreibe Vor- und Nachnamen so, wie sie im Lebenslauf stehen sollen.",
+    "ask_email": "Deine E-Mail-Adresse für Arbeitgeber?",
+    "ask_phone": "Deine Telefonnummer (mit Ländervorwahl)?",
+    "ask_location": "In welcher Stadt und welchem Land lebst du? Beispiel: <code>Wien, Österreich</code>",
+    "ask_linkedin": "Hast du ein LinkedIn-Profil? Sende den Link oder überspringe.",
+    "ask_portfolio": "Hast du ein Portfolio oder eine eigene Website? Sende den Link oder überspringe.",
+    "ask_direction": "Welche Stelle möchtest du finden? Wenn du noch unsicher bist, helfe ich dir anhand deiner Erfahrung, eine Richtung zu finden.",
+    "btn_dir_known": "🎯 Beruf angeben",
+    "btn_dir_help": "🧭 Hilf mir bei der Wahl",
+    "btn_dir_exploring": "🔀 Ich bin offen für verschiedene Bereiche",
+    "ask_target_role": "Welche Position suchst du? Beispiel: <code>Video Editor</code>",
+    "ask_experience": "Erzähl mir von deiner letzten oder aktuellen Stelle: Position, Firma, Zeitraum und deine Aufgaben. Du kannst normal schreiben oder eine Sprachnachricht aufnehmen.",
+    "ask_experience_more": "Erzähl mir von der nächsten (vorherigen) Stelle: Position, Firma, Zeitraum und deine Aufgaben.",
+    "btn_no_experience": "🌱 Ich habe keine Berufserfahrung",
+    "exp_list": "Deine Berufserfahrung bisher:\n{items}",
+    "btn_add_job": "➕ Weitere Stelle hinzufügen",
+    "nothing_found": "In dieser Antwort habe ich die nötigen Angaben nicht gefunden. Kannst du es anders formulieren?",
+    "followup_job_title": "Wie lautete deine Position dort?",
+    "followup_company": "Wie heißt die Firma?",
+    "followup_dates": "Wann hast du dort gearbeitet? Beispiel: <code>03/2021 – heute</code> oder <code>2019 – 2022</code>",
+    "followup_responsibilities": "Was waren deine wichtigsten Aufgaben und Ergebnisse?",
+    "adaptive_intro": "Ein paar Fragen zu deinem Beruf, um den Lebenslauf zu stärken:",
+    "question_counter": "Frage {n} von {total}",
+    "ask_education": "Erzähl mir von deiner Ausbildung: Einrichtung, Abschluss, Fachrichtung und Jahre. Beispiel: <code>Universität Wien, BA Wirtschaft, 2016 – 2019</code>",
+    "edu_list": "Deine Ausbildung:\n{items}",
+    "btn_add_education": "➕ Ausbildung hinzufügen",
+    "ask_skills": "Welche fachlichen Kenntnisse und Programme beherrschst du?\n\nTippe auf die passenden — weitere kannst du durch Kommas getrennt schreiben.",
+    "ask_skills_none": "Welche fachlichen Kenntnisse und Programme beherrschst du? Schreibe sie durch Kommas getrennt.",
+    "btn_skills_done": "✅ Fertig",
+    "skills_added": "Hinzugefügt: {items}",
+    "ask_languages": "Welche Sprachen sprichst du und auf welchem Niveau? Eine pro Zeile, z. B.:\n<code>English - B2\nDeutsch - A2\nUkrainisch - Native</code>\nNiveaus: A1–C2, Native, Fluent. Wenn du das Niveau nicht kennst, schreibe nur die Sprache.",
+    "ask_extras": "Hast du Zertifikate, Kurse, Lizenzen, eigene Projekte oder berufliche Links? Schreibe sie zeilenweise oder überspringe.",
+    "ask_cv_language": "In welcher Sprache soll ich deinen Lebenslauf erstellen?",
+    "ask_cv_language_other": "Schreibe die Sprache des Lebenslaufs, z. B. <code>Polski</code>.",
+    "ask_design": "Ich habe mehrere Designs für deinen Beruf ausgewählt. ⭐ — meine Empfehlung.",
+    "btn_choose_for_me": "🤖 Wähle für mich",
+    "generating": "⏳ Ich erstelle deinen Lebenslauf: Struktur, Text und Design… Das kann bis zu einer Minute dauern.",
+    "generation_failed": "Der Lebenslauf konnte gerade nicht erstellt werden. Deine Antworten sind gespeichert — bitte versuche es gleich noch einmal.",
+    "need_contact": "Ein Lebenslauf braucht mindestens eine E-Mail-Adresse oder Telefonnummer. Bitte sende eines davon.",
+    "need_name": "Bitte sende deinen Vor- und Nachnamen.",
+    "bank": {
+      "video": {
+        "1": "Mit welchen Programmen schneidest du?",
+        "2": "Welche Arten von Videos hast du erstellt?",
+        "3": "Für welche Plattformen (YouTube, TikTok, Instagram, TV…)?",
+        "4": "Hast du ein Portfolio oder Showreel? Sende den Link."
+      },
+      "sales": {
+        "1": "Mit welchen Kunden hast du gearbeitet?",
+        "2": "War es B2B- oder B2C-Vertrieb?",
+        "3": "Welche CRM-Systeme hast du genutzt?",
+        "4": "Hast du messbare Ergebnisse (Umsatz, Zielerreichung, Anzahl Abschlüsse)?"
+      },
+      "logistics": {
+        "1": "Mit welchen Verkehrsträgern hast du gearbeitet?",
+        "2": "Mit welchen Ländern hast du gearbeitet?",
+        "3": "Hast du mit Frachtführern und Transportdokumenten (CMR, Zoll) gearbeitet?",
+        "4": "Welche TMS- oder ERP-Systeme hast du genutzt?"
+      },
+      "no_experience": {
+        "1": "Hast du Studienprojekte, auf die du stolz bist?",
+        "2": "Hast du eigene Projekte?",
+        "3": "Hast du Kurse absolviert?",
+        "4": "Hast du ehrenamtliche Erfahrung?"
+      },
+      "generic": {
+        "1": "Welche Tools oder Programme nutzt du bei der Arbeit?",
+        "2": "Auf welche Ergebnisse bist du am meisten stolz? Zahlen gerne, wenn du sie kennst.",
+        "3": "Was sollte ein Arbeitgeber noch wissen (Lizenzen, Portfolio)?"
+      }
+    }
+  },
+  "preview": {
+    "ready": "🎉 <b>Dein Lebenslauf ist fertig!</b> Ich habe eine Struktur gewählt, die deine relevanteste Erfahrung und Kenntnisse hervorhebt.\n\nDu kannst auch schreiben, was du ändern möchtest, z. B.: <i>„Ausbildung weiter nach unten“</i>, <i>„Videoschnitt stärker betonen“</i>, <i>„Auf eine Seite kürzen“</i>.",
+    "updated": "✅ Aktualisiert — Version {n}.",
+    "btn_confirm": "✅ Lebenslauf bestätigen",
+    "btn_edit_info": "✏️ Angaben ändern",
+    "btn_structure": "🧱 Struktur ändern",
+    "btn_design": "🎨 Design ändern",
+    "btn_language": "🌐 Sprache ändern",
+    "btn_shorter": "✂️ Kürzer machen",
+    "btn_pdf": "⬇️ PDF",
+    "btn_docx": "⬇️ DOCX",
+    "btn_versions": "🕘 Versionen",
+    "edit_hint": "Schreibe mit eigenen Worten, was du ändern möchtest, z. B.:\n• <i>Füge mein Portfolio https://… hinzu</i>\n• <i>Kürze die Beschreibung der Stelle im Restaurant</i>\n• <i>Ändere die E-Mail auf name@example.com</i>\n• <i>Formuliere das Profil formeller</i>\n\nIch füge keine Fakten hinzu, die nicht in deinem Profil stehen.",
+    "structure_title": "Ändere die Reihenfolge der Abschnitte mit den Pfeilen und tippe dann auf „Fertig“.",
+    "design_title": "Wähle ein Design:",
+    "language_title": "Wähle die Sprache des Lebenslaufs:",
+    "updating": "⏳ Ich aktualisiere deinen Lebenslauf…",
+    "confirmed": "✅ Lebenslauf bestätigt und als Haupt-Lebenslauf festgelegt.",
+    "versions_title": "🕘 <b>Versionen</b>\nTippe auf eine Version, um sie als aktuelle wiederherzustellen.",
+    "restored": "Wiederhergestellt ✓",
+    "needs_new_facts": "Ich verwende nur Fakten, die du mir genannt hast. Um neue Erfahrung, Ausbildung oder Ergebnisse hinzuzufügen, aktualisiere dein Profil (/profile) oder nenne mir die Details — dann erstelle ich den Lebenslauf neu.",
+    "nothing_changed": "Ich habe nicht verstanden, was geändert werden soll. Formuliere es bitte anders oder nutze die Buttons.",
+    "page_limit_failed": "ℹ️ Selbst im kompaktesten Layout hat der Lebenslauf {pages} Seiten. Versuche „Kürzer machen“ oder entferne einen Abschnitt.",
+    "render_failed": "Beim Erstellen des Dokuments ist etwas schiefgelaufen. Die vorherige Version bleibt erhalten.",
+    "invalid_value": "Einige Werte waren ungültig und wurden nicht übernommen."
+  },
+  "optimizer": {
+    "analyzing": "🔍 Ich analysiere deinen Lebenslauf…",
+    "title": "📋 <b>Ich habe deinen Lebenslauf analysiert und einige Verbesserungsmöglichkeiten gefunden.</b>",
+    "score": "ATS-Lesbarkeit (Richtwert): <b>{score}/100</b>",
+    "disclaimer": "<i>Der Wert ist eine Schätzung auf Basis von Strukturprüfungen. Kein Tool kann garantieren, dass ein Bewerbermanagementsystem den Lebenslauf akzeptiert.</i>",
+    "strengths": "<b>Stärken</b>",
+    "issues": "<b>Probleme</b>",
+    "recommendations": "<b>Empfohlene Änderungen</b>",
+    "missing": "<b>Fehlende Angaben</b>",
+    "btn_auto": "✨ Automatisch verbessern",
+    "btn_questions": "💬 Rückfragen beantworten",
+    "btn_recommendations": "📝 Empfehlungen ansehen",
+    "btn_keep": "📄 Original behalten",
+    "no_recommendations": "Keine weiteren Empfehlungen.",
+    "kept": "Okay, ich behalte deinen ursprünglichen Lebenslauf.",
+    "s": {
+      "contacts_complete": "Kontaktdaten sind vollständig",
+      "has_summary": "Ein Kurzprofil ist vorhanden",
+      "clear_dates": "Stationen haben klare Zeitangaben",
+      "quantified_results": "Ergebnisse sind mit Zahlen belegt",
+      "skills_listed": "Kenntnisse sind aufgeführt",
+      "languages_listed": "Sprachen sind aufgeführt"
+    },
+    "i": {
+      "no_email": "Keine E-Mail-Adresse — füge eine hinzu, damit Arbeitgeber antworten können.",
+      "no_phone": "Keine Telefonnummer.",
+      "no_summary": "Kein Kurzprofil am Anfang.",
+      "missing_dates": "Einige Positionen haben keine Zeitangaben.",
+      "few_bullets": "Die Stellenbeschreibungen sind zu knapp, um deine Tätigkeit zu zeigen.",
+      "no_quantified": "Keine messbaren Ergebnisse (Zahlen, Volumen, %).",
+      "too_long": "Der Lebenslauf ist länger, als Recruiter normalerweise lesen.",
+      "too_short": "Der Lebenslauf ist sehr kurz — wichtige Details fehlen eventuell.",
+      "no_skills": "Kein Abschnitt mit Kenntnissen.",
+      "no_languages": "Sprachkenntnisse sind nicht angegeben.",
+      "scanned": "Die Datei ist ein gescanntes Bild — viele ATS können sie nicht lesen.",
+      "many_pages": "Zu viele Seiten.",
+      "long_paragraphs": "Lange Absätze sind schwer zu überfliegen — nutze Aufzählungspunkte.",
+      "no_experience_section": "Kein Abschnitt zu Berufserfahrung oder Ausbildung gefunden."
+    },
+    "fallback_q": {
+      "missing_dates": "Für welche Positionen kannst du mir die Zeiträume (Monat/Jahr) nennen?",
+      "no_quantified": "Hast du messbare Ergebnisse, z. B. Volumen, Kundenzahlen oder Wachstum?",
+      "no_skills": "Welche Tools, Programme und fachlichen Kenntnisse nutzt du?",
+      "no_summary": "Auf welche Position bewirbst du dich?",
+      "few_bullets": "Was waren deine Hauptaufgaben in deiner letzten Stelle?"
+    }
+  },
+  "examples": {
+    "intro": "👀 Hier sind drei Beispiele für gut strukturierte Lebensläufe (alle Daten sind fiktiv).",
+    "classic_ats": "<b>Classic ATS</b>\nEinspaltig, Standardüberschriften, keine Deko-Elemente — wird von Bewerbermanagementsystemen zuverlässig gelesen.\n<i>Empfohlen für:</i> Logistik, Finanzen, Technik, Verwaltung, Gesundheitswesen.",
+    "modern": "<b>Modern Professional</b>\nKlare Einspalten-Struktur mit farbigem Kopfbereich und Akzent-Überschriften.\n<i>Empfohlen für:</i> Vertrieb, Marketing, Projektmanagement, Beratung, IT.",
+    "creative": "<b>Creative</b>\nMarkanter Kopfbereich und Seitenleiste für Kontakt und Kenntnisse.\n<i>Empfohlen für:</i> Videoschnitt, Design, Content Creation, Fotografie.",
+    "outro": "Möchtest du so einen Lebenslauf?",
+    "btn_similar": "✨ Ähnlichen erstellen: {name}",
+    "unavailable": "Beispiele sind gerade nicht verfügbar."
   }
 }

@@ -160,8 +160,12 @@ def cv_list_kb(_: Translator, items: list[tuple[int, str]]) -> InlineKeyboardMar
     return builder.as_markup()
 
 
-def cv_detail_kb(_: Translator, resume_id: int, has_file: bool, is_primary: bool) -> InlineKeyboardMarkup:
+def cv_detail_kb(
+    _: Translator, resume_id: int, has_file: bool, is_primary: bool, editable: bool = False
+) -> InlineKeyboardMarkup:
     rows = []
+    if editable:
+        rows.append([_btn(_("cv.btn_open_editor"), CvCb(action="preview", resume_id=resume_id))])
     if has_file:
         rows.append([_btn(_("cv.btn_download"), CvCb(action="download", resume_id=resume_id))])
     if not is_primary:

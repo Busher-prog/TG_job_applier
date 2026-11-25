@@ -1,0 +1,69 @@
+{# Shared section renderers. All text is real text (no images) so ATS can read it. #}
+{% macro dates(item) -%}
+{%- if item.start_date or item.end_date or item.is_current -%}
+{{ item.start_date | cvdate }}{% if item.start_date %} – {% endif %}{% if item.is_current %}{{ t.present }}{% else %}{{ item.end_date | cvdate }}{% endif %}
+{%- endif -%}
+{%- endmacro %}
+
+{% macro experience_list(items) %}
+{% for e in items %}
+<div class="entry">
+  <div class="entry-head">
+    <div class="entry-title"><strong>{{ e.job_title or '' }}</strong>{% if e.company %}{% if e.job_title %} · {% endif %}<span class="org">{{ e.company }}</span>{% endif %}</div>
+    <div class="entry-meta">{{ dates(e) }}{% if e.location %}{% if e.start_date or e.end_date %} · {% endif %}{{ e.location }}{% endif %}</div>
+  </div>
+  {% if e.bullets %}<ul>{% for b in e.bullets %}<li>{{ b }}</li>{% endfor %}</ul>{% endif %}
+  {% if e.tools %}<div class="tools">{{ e.tools | join(', ') }}</div>{% endif %}
+</div>
+{% endfor %}
+{% endmacro %}
+
+{% macro section_body(key, doc) %}
+{% if key == 'professional_summary' %}
+  <p class="summary">{{ doc.professional_summary }}</p>
+{% elif key == 'experience' %}
+  {{ experience_list(doc.experience) }}
+{% elif key == 'additional_experience' %}
+  {{ experience_list(doc.additional_experience) }}
+{% elif key == 'achievements' %}
+  <ul>{% for a in doc.achievements %}<li>{{ a }}</li>{% endfor %}</ul>
+{% elif key == 'skills' %}
+  {% if doc.skills %}<p class="list">{{ doc.skills | join(' · ') }}</p>{% endif %}
+  {% if doc.soft_skills %}<p class="list soft"><span class="label">{{ t.soft_skills }}:</span> {{ doc.soft_skills | join(' · ') }}</p>{% endif %}
+{% elif key == 'software' %}
+  <p class="list">{{ doc.software | join(' · ') }}</p>
+{% elif key == 'transferable_skills' %}
+  <ul>{% for s in doc.transferable_skills %}<li>{{ s }}</li>{% endfor %}</ul>
+{% elif key == 'education' %}
+  {% for e in doc.education %}
+  <div class="entry">
+    <div class="entry-head">
+      <div class="entry-title"><strong>{{ e.degree or '' }}{% if e.specialization %}{% if e.degree %}, {% endif %}{{ e.specialization }}{% endif %}</strong>{% if e.institution %}{% if e.degree or e.specialization %} · {% endif %}<span class="org">{{ e.institution }}</span>{% endif %}</div>
+      <div class="entry-meta">{{ dates(e) }}{% if e.status == 'in_progress' %} ({{ t.in_progress }}){% endif %}</div>
+    </div>
+    {% if e.details %}<ul>{% for d in e.details %}<li>{{ d }}</li>{% endfor %}</ul>{% endif %}
+  </div>
+  {% endfor %}
+{% elif key == 'languages' %}
+  <p class="list">{% for l in doc.languages %}{{ l.language }}{% set lbl = l.level | level %}{% if lbl %} — {{ lbl }}{% endif %}{% if not loop.last %} · {% endif %}{% endfor %}</p>
+{% elif key == 'projects' %}
+  {% for p in doc.projects %}
+  <div class="entry">
+    <div class="entry-title"><strong>{{ p.name }}</strong>{% if p.role %} · {{ p.role }}{% endif %}{% if p.url %} · <a href="{{ p.url }}">{{ p.url | prettyurl }}</a>{% endif %}</div>
+    {% if p.description %}<p>{{ p.description }}</p>{% endif %}
+    {% if p.technologies %}<div class="tools">{{ p.technologies | join(', ') }}</div>{% endif %}
+  </div>
+  {% endfor %}
+{% elif key == 'certifications' %}
+  <ul>{% for c in doc.certifications %}<li>{{ c.name }}{% if c.issuer %}, {{ c.issuer }}{% endif %}{% if c.date %} ({{ c.date | cvdate }}){% endif %}{% if c.url %} — <a href="{{ c.url }}">{{ c.url | prettyurl }}</a>{% endif %}</li>{% endfor %}</ul>
+{% elif key == 'portfolio' %}
+  <ul class="links">{% for p in doc.portfolio %}<li>{% if p.title %}{{ p.title }}: {% endif %}<a href="{{ p.url }}">{{ p.url | prettyurl }}</a></li>{% endfor %}</ul>
+{% endif %}
+{% endmacro %}
+
+{% macro contact_items(doc) -%}
+{%- for text, url in contacts -%}
+{%- if not loop.first %} <span class="sep">|</span> {% endif -%}
+{%- if url %}<a href="{{ url }}">{{ text }}</a>{% else %}{{ text }}{% endif -%}
+{%- endfor -%}
+{%- endmacro %}

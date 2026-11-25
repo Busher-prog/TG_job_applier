@@ -1,0 +1,33 @@
+{% from "_cv_macros.html" import section_body with context %}
+<!doctype html>
+<html lang="{{ doc.document_language }}">
+<head><meta charset="utf-8"><title>{{ doc.candidate.full_name }} — CV</title>
+<style>{{ css | safe }}</style></head>
+<body class="density-{{ doc.density }}">
+<header>
+  <h1>{{ doc.candidate.full_name }}</h1>
+  {% if doc.candidate.headline %}<div class="headline">{{ doc.candidate.headline }}</div>{% endif %}
+</header>
+<div class="layout">
+  <main>
+  {% for key in main_sections %}
+  <section class="sec-{{ key }}"><h2>{{ t[key] }}</h2>{{ section_body(key, doc) }}</section>
+  {% endfor %}
+  </main>
+  <aside>
+    <section class="sec-contact"><h2>{{ t.contact }}</h2>
+      {% set c = doc.candidate %}
+      <ul class="plain">
+        {% if c.location %}<li>{{ c.location }}</li>{% endif %}
+        {% if c.email %}<li><a href="mailto:{{ c.email }}">{{ c.email }}</a></li>{% endif %}
+        {% if c.phone %}<li><a href="tel:{{ c.phone | replace(' ', '') }}">{{ c.phone }}</a></li>{% endif %}
+        {% if c.linkedin_url %}<li><a href="{{ c.linkedin_url }}">{{ c.linkedin_url | prettyurl }}</a></li>{% endif %}
+        {% if c.portfolio_url %}<li><a href="{{ c.portfolio_url }}">{{ c.portfolio_url | prettyurl }}</a></li>{% endif %}
+      </ul>
+    </section>
+    {% for key in side_sections %}
+    <section class="sec-{{ key }}"><h2>{{ t[key] }}</h2>{{ section_body(key, doc) }}</section>
+    {% endfor %}
+  </aside>
+</div>
+</body></html>

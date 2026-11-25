@@ -15,17 +15,17 @@ Celery · Pydantic · OpenAI / Gemini · WeasyPrint · python-docx · S3-compati
 | Phase | Scope | Status |
 |---|---|---|
 | 1. Bot foundation | bot, DB, migrations, localisation (en/uk/ru/de), welcome, language, consent, 4 CV scenarios entry, PDF/DOCX upload, OCR, AI CV parsing, profile confirmation & editing, main menu, My CVs, settings, GDPR export/delete | ✅ done, tested |
-| 2. CV Builder | interview, generation, structure planner, 3 templates, PDF/DOCX, preview, NL editing, optimizer, versions | ⏳ next |
-| 3. Job engine | sources, normalisation, hard filters, matching, feed, saved jobs | planned |
+| 2. CV Builder | adaptive interview, AI content generation, dynamic section order, 3 templates, PDF/DOCX, preview, NL editing, CV optimizer, version history, CV examples | ✅ done, tested |
+| 3. Job engine | sources, normalisation, hard filters, matching, feed, saved jobs | ⏳ next |
 | 4. Application engine | contacts, cover letters, tailoring, Gmail OAuth/API, tracker | planned |
 | 5. Commercial | Telegram Stars payments, subscriptions, credits, scheduler, notifications, admin | planned |
 
-Scenarios B (Create CV), C (Improve CV — the upload works, the optimizer step is Phase 2) and D
-(CV examples) currently answer “coming soon”. Menu sections of later phases do the same.
+All four CV scenarios (upload, create with AI, improve, examples) work. Menu sections of later
+phases (jobs, applications, subscription…) answer “coming soon”.
 
 ### What was verified in this repository
 
-* `pytest`: **70 tests pass** (unit + integration against a real PostgreSQL 16):
+* `pytest`: **99 tests pass** (unit + integration against a real PostgreSQL 16):
   * file validation (format by magic bytes, size, legacy `.doc`, encrypted/corrupted files, zip bombs);
   * text extraction from PDF (incl. embedded hyperlinks, Cyrillic) and DOCX (incl. headers and tables);
   * **real OCR** of an image-only PDF with Tesseract;
@@ -34,6 +34,20 @@ Scenarios B (Create CV), C (Improve CV — the upload works, the optimizer step 
     and database with a fake Telegram API (welcome → language → consent gate → consent → resume options →
     upload → profile summary → edit → leave to menu → continue → confirm), My CVs (download/delete),
     settings (independent UI/CV/letter languages), GDPR export and account deletion;
+  * **CV Builder end-to-end** through the bot: multi-fact answers (name + email + phone in one message
+    are not asked again), only missing experience details are asked, profession-specific questions,
+    skill suggestions with multi-select, languages, CV language, design → generated PDF; then the five
+    natural-language edits from the spec, design/language buttons, DOCX download, version restore,
+    confirmation; interrupted interview resumes after leaving to the menu;
+  * CV Optimizer flow (report with indicative ATS score → clarifying questions → improved CV) and
+    CV examples (3 previews + PDFs → “create similar”);
+  * fact protection: invented numbers, skills and employers from the model are dropped; dates,
+    companies, titles and institutions always come from the facts; career changers keep all
+    employers (irrelevant ones move to “Additional experience”);
+  * rendering: all 3 templates × Latin/Cyrillic → A4, selectable text, correct reading order,
+    clickable links, automatic check that every essential fact is present in the PDF text,
+    page-limit compaction, HTML escaping of user content, DOCX output;
+  * per-user data isolation (another user cannot download your CV by id);
   * Alembic `upgrade head` → `alembic check` (no drift vs. models) → `downgrade base` → `upgrade head`;
   * locale files: identical keys, identical placeholders, balanced HTML tags.
 * **Not verified here:** a live Telegram bot token, OpenAI / Gemini calls (no API keys in this
@@ -106,11 +120,12 @@ app/
 ├── schemas/        Pydantic schemas = JSON Schemas for AI agents (validated before saving)
 ├── prompts/        one system prompt per AI agent (*.md)
 ├── locales/        en.json, uk.json, ru.json, de.json — all UI text
-├── templates/      CV templates (Phase 2), legal/ pages
+├── templates/      CV templates classic_ats/ modern/ creative/ (Jinja2 + CSS), legal/ pages
 ├── workers/        Celery tasks (Phase 3+)
 ├── config.py       settings from environment
 └── main.py         entry point: bot | api | all
-migrations/         Alembic
+migrations/         Alembic (0001 schema, 0002 seed of resume templates)
+examples/           fictional example CVs: *.json → *.pdf, *.docx, *.png (python -m scripts.build_examples)
 tests/              unit/ and integration/ (real PostgreSQL, real Dispatcher)
 ```
 
@@ -122,6 +137,14 @@ tests/              unit/ and integration/ (real PostgreSQL, real Dispatcher)
 * **Prompt-injection defence.** CV text, job postings, websites and emails are wrapped in
   `<untrusted_data>` blocks; every system prompt states they are data, not instructions; the wrapper
   cannot be closed from inside the content.
+* **CV generation pipeline.** `facts (profile) → Structure Planner (AI, rule-based fallback) →
+  Content Generator (AI, text only) → deterministic assembly → renderer → PDF verification`.
+  The model never returns dates, employers, titles or institutions; they are merged from the facts.
+  Generated bullets/summary containing numbers that are not in the facts are replaced by the
+  original wording; skills not present in the facts are dropped. A document whose PDF text lost an
+  essential fact is not handed out.
+* **Every CV change is a new version** (`resume_versions`, PDF + DOCX in storage); any version can be
+  restored. Structure/design changes re-render without calling the AI; wording changes regenerate.
 * **No invented facts.** After parsing, `ground_parsed_cv` removes emails, phones and URLs that do not
   literally appear in the document and recomputes total experience from dates (overlaps merged).
   Language levels default to `Unknown` unless stated.
@@ -155,8 +178,26 @@ transactions), indexes on hot paths.
 * Backups: use managed PostgreSQL point-in-time recovery or scheduled `pg_dump`, and bucket
   versioning for S3. Deleted accounts must also expire from backups within the retention window.
 
+### AI agents (`app/prompts/`)
+
+| Agent | Prompt | Used for | Fallback without AI |
+|---|---|---|---|
+| CV Parser | `cv_parser.md` | uploaded CV → structured facts | rule-based extraction |
+| Adaptive Interview Agent | `interview_agent.md`, `interview_questions.md`, `skill_suggester.md` | extracting facts from free answers, profession questions, skill suggestions | rule-based extraction, localised question bank |
+| CV Structure Planner | `cv_structure_planner.md` | profile type, section order, relevant vs additional experience, template | rule-based planner |
+| CV Content Generator | `cv_content_generator.md` | summary, bullets, grouping of skills | facts verbatim |
+| CV Optimizer | `cv_optimizer.md` | qualitative review + clarifying questions (score is rule-based) | rule-based findings |
+| User Intent Interpreter | `user_intent_interpreter.md` | NL edit request → edit operations | keyword rules (en/de/uk/ru) |
+
+Job Description Parser, Job Matching, Contact Verification, Cover Letter and CV Tailoring agents come
+with Phases 3–4.
+
 ## Known limitations / open items
 
 * Phases 2–5 are not implemented yet (see status table).
 * Only English legal pages exist; other languages fall back to English.
 * Voice transcription requires OpenAI or Gemini (not available in `MOCK_MODE`).
+* AI prompts were exercised only through the schema/validation layer and the offline mock — quality
+  of real model output must be reviewed with a live key before launch.
+* Section headings are localised for en/de/uk/ru; a CV in another language uses English headings.
+* The ATS score is an indicative rule-based estimate, explicitly labelled as such in the bot.

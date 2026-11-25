@@ -13,3 +13,15 @@ class ProfileEditStates(StatesGroup):
 
 class SettingsStates(StatesGroup):
     waiting_other_cv_language = State()
+
+
+class BuilderStates(StatesGroup):
+    answering = State()
+
+
+class PreviewStates(StatesGroup):
+    editing = State()
+
+
+class OptimizerStates(StatesGroup):
+    answering = State()

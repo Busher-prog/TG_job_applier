@@ -1,0 +1,25 @@
+{
+  "candidate": {"full_name": "Lena Hart", "headline": "Video Editor & Content Creator",
+    "email": "lena.hart@example.com", "phone": "+43 660 0000003", "location": "Vienna, Austria",
+    "portfolio_url": "https://portfolio.example.com/lena-hart"},
+  "target_roles": ["Video Editor", "Content Creator"],
+  "professional_summary": "Video editor focused on short-form social content. Edits, colour-grades and subtitles videos for Instagram, TikTok and YouTube, from brief to published post.",
+  "portfolio": [{"title": "Showreel", "url": "https://portfolio.example.com/lena-hart/showreel"}],
+  "experience": [
+    {"id": "exp1", "company": "Example Media Studio", "job_title": "Video Editor", "location": "Vienna",
+     "start_date": "2022-06", "is_current": true,
+     "bullets": ["Edit 15–20 short-form videos per week for 6 brand accounts",
+                 "Created a reusable subtitle and motion template library",
+                 "Colour-grade and mix audio for campaign videos"]},
+    {"id": "exp2", "company": "Freelance", "job_title": "Content Creator", "start_date": "2020-09", "end_date": "2022-05",
+     "bullets": ["Produced social content for local restaurants and fitness studios"]}
+  ],
+  "projects": [{"name": "City Stories", "description": "Documentary mini-series of 8 episodes about local craftspeople.", "role": "Editor"}],
+  "software": ["Adobe Premiere Pro", "After Effects", "DaVinci Resolve", "CapCut"],
+  "skills": ["Short-form storytelling", "Colour grading", "Motion graphics", "Subtitling"],
+  "education": [{"id": "edu1", "institution": "Example Film Academy", "degree": "Diploma", "specialization": "Film Editing",
+                 "start_date": "2017", "end_date": "2020", "status": "completed"}],
+  "languages": [{"language": "German", "level": "C1"}, {"language": "English", "level": "Fluent"}],
+  "section_order": ["professional_summary", "portfolio", "experience", "projects", "software", "skills", "education", "languages"],
+  "template": "creative", "document_language": "en"
+}

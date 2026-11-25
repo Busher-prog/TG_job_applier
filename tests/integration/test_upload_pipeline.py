@@ -71,3 +71,17 @@ async def test_invalid_file_records_nothing_personal(session):  # type: ignore[n
     with pytest.raises(CVFileError):
         await process_cv_upload(session, user.id, b"not a cv", "cv.txt")
     assert await session.scalar(select(func.count()).select_from(Resume)) == 0
+
+
+async def test_reapplying_same_facts_is_idempotent(session, sample_pdf):  # type: ignore[no-untyped-def]
+    from app.services.cv.facts import profile_to_facts
+    from app.services.cv.profile_service import apply_parsed_cv
+
+    user, _ = await get_or_create_user(session, 5, None, None, "en")
+    await process_cv_upload(session, user.id, sample_pdf, "cv.pdf")
+    profile = await ProfileRepository(session).get_full(user.id)
+    before = sorted(s.name for s in profile.skills)
+    await apply_parsed_cv(session, user.id, profile_to_facts(profile), source="upload")
+    await session.commit()
+    profile = await ProfileRepository(session).get_full(user.id)
+    assert sorted(s.name for s in profile.skills) == before

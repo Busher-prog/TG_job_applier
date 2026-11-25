@@ -86,3 +86,11 @@ async def session(session_factory) -> AsyncIterator[AsyncSession]:  # type: igno
     async with session_factory() as s:
         yield s
         await s.rollback()
+
+
+@pytest.fixture(scope="session")
+def dispatcher(engine):  # type: ignore[no-untyped-def]
+    """One Dispatcher per test session (aiogram routers can be attached only once)."""
+    from app.bot.factory import create_dispatcher
+
+    return create_dispatcher(async_sessionmaker(engine, expire_on_commit=False))

@@ -71,7 +71,7 @@ async def cv_open(call: CallbackQuery, callback_data: CvCb, user: User, _: Trans
     await show(
         call,
         f"📄 <b>{esc(resume.title)}</b>\n{esc(_label(_, resume))}\n{resume.created_at:%d.%m.%Y}",
-        kb.cv_detail_kb(_, resume.id, has_file, resume.is_primary),
+        kb.cv_detail_kb(_, resume.id, has_file, resume.is_primary, editable=resume.current_version_id is not None),
     )
 
 
@@ -140,3 +140,16 @@ async def cv_delete_yes(call: CallbackQuery, callback_data: CvCb, user: User, _:
     await session.flush()
     await call.answer(_("cv.deleted"))
     await show_cv_list(call, _, user, session)
+
+
+@router.callback_query(CvCb.filter(F.action == "preview"))
+async def cv_preview(
+    call: CallbackQuery, callback_data: CvCb, user: User, _: Translator, session: AsyncSession, state: FSMContext
+) -> None:
+    from app.bot.handlers.cv_preview import open_preview
+
+    await call.answer()
+    if not isinstance(call.message, Message) or not await open_preview(
+        call.message, _, user, session, state, callback_data.resume_id
+    ):
+        await call.answer(_("common.not_found"), show_alert=True)

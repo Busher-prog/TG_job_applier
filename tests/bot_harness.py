@@ -105,7 +105,16 @@ class BotHarness:
 
     @staticmethod
     def texts(calls: list[TelegramMethod[Any]]) -> list[str]:
-        return [c.text for c in calls if getattr(c, "text", None)]  # type: ignore[attr-defined]
+        out = []
+        for c in calls:
+            value = getattr(c, "text", None) or getattr(c, "caption", None)
+            if value:
+                out.append(value)
+        return out
+
+    @staticmethod
+    def documents(calls: list[TelegramMethod[Any]]) -> list[Any]:
+        return [c.document for c in calls if type(c).__name__ == "SendDocument"]  # type: ignore[attr-defined]
 
     @staticmethod
     def last_markup(calls: list[TelegramMethod[Any]]) -> InlineKeyboardMarkup | None:
