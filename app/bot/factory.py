@@ -40,8 +40,11 @@ BOT_COMMANDS = (
 
 
 def create_bot(token: str | None = None) -> Bot:
+    from app.bot.session import EnvAwareAiohttpSession
+
     return Bot(
         token=token or get_settings().telegram_bot_token,
+        session=EnvAwareAiohttpSession(),
         default=DefaultBotProperties(parse_mode=ParseMode.HTML, link_preview_is_disabled=True),
     )
 
