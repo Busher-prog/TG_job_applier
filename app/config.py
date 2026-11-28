@@ -28,7 +28,7 @@ class Settings(BaseSettings):
     openai_model: str = "gpt-4.1-mini"
     openai_transcription_model: str = "whisper-1"
     gemini_api_key: str = ""
-    gemini_model: str = "gemini-2.0-flash"
+    gemini_model: str = "gemini-3.5-flash-lite"
     ai_timeout_seconds: float = 90.0
 
     database_url: str = "postgresql+asyncpg://copilot:copilot@localhost:5432/copilot"

@@ -41,7 +41,8 @@ class GeminiProvider(LLMProvider):
             parts = payload["candidates"][0]["content"]["parts"]
         except (KeyError, IndexError) as exc:
             raise LLMError("Gemini returned no content") from exc
-        return "".join(p.get("text", "") for p in parts)
+        # Newer models may return reasoning parts flagged "thought": they are not the answer.
+        return "".join(p.get("text", "") for p in parts if not p.get("thought"))
 
     async def _complete_json(
         self,
