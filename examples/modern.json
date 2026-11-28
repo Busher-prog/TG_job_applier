@@ -1,0 +1,25 @@
+{
+  "candidate": {"full_name": "Sofia Marin", "headline": "B2B Sales Manager",
+    "email": "sofia.marin@example.com", "phone": "+49 151 0000002", "location": "Munich, Germany",
+    "linkedin_url": "https://www.linkedin.com/in/example-sofia-marin"},
+  "target_roles": ["Sales Manager", "Account Executive"],
+  "professional_summary": "B2B sales manager with 8 years of experience selling SaaS to mid-sized manufacturers. Builds pipeline from outbound prospecting to closing, manages key accounts and works closely with product and customer success teams.",
+  "experience": [
+    {"id": "exp1", "company": "Example Software GmbH", "job_title": "Sales Manager DACH", "location": "Munich",
+     "start_date": "2020-02", "is_current": true,
+     "bullets": ["Closed EUR 1.4M in new annual recurring revenue in 2024",
+                 "Manage a portfolio of 35 key accounts with 96% renewal rate",
+                 "Introduced a qualification framework adopted by the whole sales team"]},
+    {"id": "exp2", "company": "Demo Industrial Supply", "job_title": "Account Executive", "location": "Augsburg",
+     "start_date": "2016-05", "end_date": "2020-01",
+     "bullets": ["Grew territory revenue by 30% over three years", "Ran outbound campaigns with marketing"]}
+  ],
+  "skills": ["Solution selling", "Key account management", "Negotiation", "Pipeline forecasting"],
+  "software": ["Salesforce", "HubSpot", "LinkedIn Sales Navigator"],
+  "education": [{"id": "edu1", "institution": "Example Business School", "degree": "MA",
+                 "specialization": "Marketing & Sales", "start_date": "2014", "end_date": "2016", "status": "completed"}],
+  "languages": [{"language": "German", "level": "C2"}, {"language": "English", "level": "C1"}, {"language": "Romanian", "level": "Native"}],
+  "certifications": [{"name": "MEDDICC Practitioner", "issuer": "Example Academy", "date": "2023"}],
+  "section_order": ["professional_summary", "experience", "skills", "software", "certifications", "education", "languages"],
+  "template": "modern", "document_language": "en"
+}

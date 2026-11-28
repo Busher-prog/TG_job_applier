@@ -1,0 +1,50 @@
+{% extends "_base.html" %}
+{% block title %}Privacy Policy{% endblock %}
+{% block body %}
+<h1>Privacy Policy</h1>
+<p><small>This document is a template prepared for the AI Job Copilot service. The operator must complete the controller details and have it reviewed by a legal professional before public launch.</small></p>
+
+<h2>1. Controller</h2>
+<p>[Company name, address, email]. Data protection contact: {{ support }}.</p>
+
+<h2>2. What data we process</h2>
+<ul>
+<li>Telegram account data: user ID, username, first name, interface language.</li>
+<li>CV data you provide: uploaded files, contact details, work history, education, skills, languages, portfolio links.</li>
+<li>Job search preferences: target roles, locations, work format, salary expectations, exclusions, work authorisation you state.</li>
+<li>Generated content: CV versions, cover letters, application history and statuses.</li>
+<li>Email connection: Gmail address and an encrypted OAuth refresh token (only if you connect Gmail).</li>
+<li>Payment records: product, amount, status, Telegram payment identifiers (no card data).</li>
+</ul>
+
+<h2>3. Purposes and legal bases (GDPR Art. 6)</h2>
+<ul>
+<li>Providing the service you request — CV creation, job matching, cover letters, sending applications (contract, Art. 6(1)(b)).</li>
+<li>Processing CV data with AI providers — based on your consent (Art. 6(1)(a)), which you can withdraw at any time.</li>
+<li>Security, abuse prevention and audit logs (legitimate interest, Art. 6(1)(f)).</li>
+<li>Accounting for payments (legal obligation, Art. 6(1)(c)).</li>
+</ul>
+<p>We do not use age, gender, nationality or other protected characteristics to rank vacancies.</p>
+
+<h2>4. Recipients</h2>
+<ul>
+<li>AI providers (e.g. OpenAI or Google) to analyse CVs and job descriptions and generate texts.</li>
+<li>Hosting, database and file storage providers.</li>
+<li>Google (Gmail API) — only to send emails you explicitly confirm.</li>
+<li>Employers — only the application you confirm before sending.</li>
+<li>Telegram — as the messaging and payment platform.</li>
+</ul>
+<p>Transfers outside the EEA rely on Standard Contractual Clauses or adequacy decisions.</p>
+
+<h2>5. Retention</h2>
+<p>Data is stored while your account is active. You can delete individual CVs or your entire account in the bot (Settings → Privacy &amp; data). Accounts inactive for 24 months are deleted. Anonymised audit entries and payment records required by law are kept for the statutory period.</p>
+
+<h2>6. Your rights</h2>
+<p>You have the right of access, rectification, erasure, restriction, data portability, objection and withdrawal of consent. Export and deletion are available directly in the bot. You may lodge a complaint with your supervisory authority.</p>
+
+<h2>7. Security</h2>
+<p>OAuth tokens are encrypted at rest, connections use HTTPS, access to personal data is restricted and logged, and CV content is never written to application logs.</p>
+
+<h2>8. Gmail data</h2>
+<p>The use of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements. Sending requires only the <code>gmail.send</code> scope. Reading replies is optional and requested separately.</p>
+{% endblock %}

@@ -1,0 +1,27 @@
+{
+  "candidate": {"full_name": "Markus Lindner", "headline": "Logistics Coordinator",
+    "email": "markus.lindner@example.com", "phone": "+43 660 0000001", "location": "Linz, Austria",
+    "linkedin_url": "https://www.linkedin.com/in/example-markus-lindner"},
+  "target_roles": ["Logistics Coordinator", "Transport Planner"],
+  "professional_summary": "Logistics coordinator with 6 years of experience in road freight across the EU. Plans FTL and LTL transports, negotiates with carriers and keeps customs documentation accurate. Comfortable with SAP TM and fast-paced dispatch environments.",
+  "experience": [
+    {"id": "exp1", "company": "Example Transport GmbH", "job_title": "Logistics Coordinator", "location": "Linz",
+     "start_date": "2021-04", "is_current": true,
+     "bullets": ["Plan 40+ weekly FTL and LTL shipments between Austria, Germany and Italy",
+                 "Reduced empty kilometres by 12% by consolidating return loads",
+                 "Prepare CMR, T1 and export documentation for non-EU routes",
+                 "Coordinate a pool of 25 subcontracted carriers"]},
+    {"id": "exp2", "company": "Sample Logistics AG", "job_title": "Dispatcher", "location": "Wels",
+     "start_date": "2018-09", "end_date": "2021-03",
+     "bullets": ["Dispatched regional distribution tours for retail customers",
+                 "Handled delivery exceptions and customer claims"]}
+  ],
+  "achievements": ["Reduced empty kilometres by 12% within one year"],
+  "skills": ["Transport planning", "Carrier negotiation", "Customs documentation", "Incoterms 2020"],
+  "software": ["SAP TM", "MS Excel", "Transporeon"],
+  "education": [{"id": "edu1", "institution": "Example University of Applied Sciences", "degree": "BSc",
+                 "specialization": "International Logistics", "start_date": "2015", "end_date": "2018", "status": "completed"}],
+  "languages": [{"language": "German", "level": "Native"}, {"language": "English", "level": "C1"}, {"language": "Italian", "level": "B1"}],
+  "section_order": ["professional_summary", "experience", "achievements", "skills", "software", "education", "languages"],
+  "template": "classic_ats", "document_language": "en"
+}
